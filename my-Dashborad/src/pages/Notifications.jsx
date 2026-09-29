@@ -1,6 +1,4 @@
-// import React, { useState } from "react";
 import { Link } from "react-router-dom";
-// import { FcHome, FcAutomatic, FcPackage } from "react-icons/fc";
 import { FiX } from "react-icons/fi";
 import { FiAlertCircle } from "react-icons/fi";
 import { FaUserCircle, FaBell, FaCog, FaPen, FaIcons } from "react-icons/fa";

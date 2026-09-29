@@ -1,8 +1,33 @@
-import React from "react";
+import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { img } from "../assets/image";
 
 const Sign_up = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    age: "",
+    eamil: "",
+    phone: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    console.log("name", formData.name);
+    console.log("Age", formData.age);
+    console.log("email", formData.eamil);
+    console.log("phone", formData.phone);
+    console.log("password", formData.password);
+  };
+
   return (
     <div className="min-h-screen w-full p-4">
       <section className="mx-auto flex min-h-[calc(100vh-2rem)] max-w-6xl items-center justify-center overflow-hidden rounded-2xl bg-gray-50 p-4">
@@ -24,7 +49,25 @@ const Sign_up = () => {
               Enter your email and password to register.
             </p>
 
-            <form className="mt-8 space-y-5">
+            <form className="mt-8 space-y-5" onSubmit={handleSubmit}>
+              <div>
+                <label
+                  htmlFor="name"
+                  className="mb-2 block text-sm font-semibold text-[#263238]"
+                >
+                  Your Name
+                </label>
+
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder="John Doe"
+                  className="w-full rounded-lg border border-gray-300 bg-white p-3 text-sm outline-none transition focus:border-[#263832] focus:ring-1 focus:ring-[#263832]"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </div>
               <div>
                 <label
                   htmlFor="email"
@@ -35,25 +78,67 @@ const Sign_up = () => {
 
                 <input
                   id="email"
+                  name="eamil"
                   type="email"
                   placeholder="name@mail.com"
                   className="w-full rounded-lg border border-gray-300 bg-white p-3 text-sm outline-none transition focus:border-[#263832] focus:ring-1 focus:ring-[#263832]"
+                  value={formData.eamil}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="age"
+                  className="mb-2 block text-sm font-semibold text-[#263238]"
+                >
+                  Age
+                </label>
+
+                <input
+                  id="age"
+                  name="age"
+                  type="number"
+                  placeholder="Age"
+                  className="w-full rounded-lg border border-gray-300 bg-white p-3 text-sm outline-none transition focus:border-[#263832] focus:ring-1 focus:ring-[#263832]"
+                  value={formData.age}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="mb-2 block text-sm font-semibold text-[#263238]"
+                >
+                  Phone
+                </label>
+
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  placeholder="91+"
+                  className="w-full rounded-lg border border-gray-300 bg-white p-3 text-sm outline-none transition focus:border-[#263832] focus:ring-1 focus:ring-[#263832]"
+                  value={formData.phone}
+                  onChange={handleChange}
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="password"
-                  className="mb-2 block text-sm font-semibold text-[#263238]"
+                  className="mb-2 block text-sm font-semibold text-[#263832]"
                 >
                   Password
                 </label>
 
                 <input
                   id="password"
+                  name="password"
                   type="password"
                   placeholder="********"
                   className="w-full rounded-lg border border-gray-300 bg-white p-3 text-sm outline-none transition focus:border-[#263832] focus:ring-1 focus:ring-[#263832]"
+                  value={formData.password}
+                  onChange={handleChange}
                 />
               </div>
 

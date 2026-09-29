@@ -78,7 +78,9 @@ const Table = () => {
             Dashboard
           </Link>
           <span className="text-sm text-gray-400">/</span>
-          <span className="text-sm text-gray-700 dark:text-gray-300">Home</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">
+            Table
+          </span>
         </div>
         <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-800 dark:bg-gray-900">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
