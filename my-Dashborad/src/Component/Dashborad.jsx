@@ -278,7 +278,10 @@ const Dashboard = () => {
                 Projects
               </h2>
               <div className="mt-2 flex items-center gap-2 text-sm text-gray-500">
-                <FaCheckCircle />
+                <button className="text-green-500">
+                  {" "}
+                  <FaCheckCircle />
+                </button>
                 <span>30 done this month</span>
               </div>
             </div>
