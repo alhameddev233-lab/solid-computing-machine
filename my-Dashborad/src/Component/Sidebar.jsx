@@ -3,6 +3,7 @@ import { HiMiniServerStack, HiServer } from "react-icons/hi2";
 import { FaHome, FaUser, FaTable } from "react-icons/fa";
 // import { IoIosNotifications } from "react-icons/io";
 import { FiAlertCircle } from "react-icons/fi";
+import { CgClose } from "react-icons/cg";
 
 const Sidebar = ({ sidebarOpen, closeSidebar }) => {
   const navClass = ({ isActive }) =>
@@ -37,7 +38,7 @@ const Sidebar = ({ sidebarOpen, closeSidebar }) => {
             className="absolute right-3 top-3 flex h-8 w-8 items-center justify-center rounded-lg text-xl text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800 md:hidden"
             aria-label="Close sidebar"
           >
-            ×
+            <CgClose />
           </button>
         </div>
 
